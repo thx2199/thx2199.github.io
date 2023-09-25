@@ -16,15 +16,16 @@ if [ -z "$VDOING" ]; then
   githubUrl=git@github.com:thx2199/thx2199.github.io
 else
   msg='来自 github actions的自动部署'
-  githubUrl=https://thx2199:${Blog}@github.com/thx2199/thx2199.github.io
+  githubUrl=https://thx2199:${BLOG}@github.com/thx2199/thx2199.github.io
   git config --global user.name "thx2199"
   git config --global user.email "thx2199@163.com"
 fi
 git init
 git add -A
 git commit -m "${msg}"
-git push -f $githubUrl master:gh-pages # 推送到github
-#git push -f git@github.com:miluluyo/vdoingBlog.git master:gh-pages
+git push -f git@github.com:thx2199/thx2199.github.io.git master
+# git push -f $githubUrl master:gh-pages # 推送到github
+# git push -f git@github.com:miluluyo/vdoingBlog.git master:gh-pages
 
 
 # deploy to coding
